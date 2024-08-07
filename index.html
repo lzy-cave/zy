@@ -14,18 +14,61 @@
     <link href="https://lzy-cave.github.io/lzy/assets/img/favicon.ico" rel="Bookmark"/>
     <title>追忆小屋 </title>
 <style>
-        body, html {
-            height: 100%;
-            margin: 0;
+       body {
+
+            background-color: #F0E68C; /* 温馨的背景色 */
+            font-family: 'Arial', sans-serif;
+            margin: 80;
             padding: 0;
-            background: #000; /* 背景色 */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Courier New', Courier, monospace; /* 字体 */
-            color: #fff; /* 文字颜色 */
+            text-align: center;
         }
-        .romantic-text {
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 30vh;
+        }
+        .love-heart {
+            position: relative;
+            width: 100px;
+            height: -50px;
+            animation: pulse 1s infinite;
+        }
+        .love-heart:before,
+        .love-heart:after {
+            content: "";
+            position: absolute;
+            left: 50px;
+            top: 0;
+            width: 50px;
+            height: 80px;
+            background: pink;
+            border-radius: 50px 50px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+        .love-heart:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        h1 {
+            color: #8B0000; /* 浪漫的红色 */
+            margin: 20px 0;
+        }
+       .romantic-text {
             font-size: 2em; /* 文字大小 */
             animation: romantic-glow 2s ease-in-out infinite alternate; /* 动画 */
         }
@@ -43,10 +86,20 @@
                            0 0 40px #e1bee7; /* 淡紫色 */
             }
         }
+        p {
+            color: #555;
+            font-size: 23px;
+            margin: 10px 0;
+        }
+        a {
+           color: #FF0000; /* 设置字体颜色为红色 */
+           font-size: 2em; /* 设置字体大小为24像素 */
+           text-decoration: none;
+       }
         </style>
-  </head>
-<body>
-    <audio autoplay="autopaly" loop="loop" id="audios">
+    </head>
+    <body>
+ <audio autoplay="autopaly" loop="loop" id="audios">
                                            <source src="https://lzy-cave.github.io/lzy/user/music/仙女湖-传说剪辑版.mp3" type="audio/mp3" />
                                     document.addEventListener('touchstart', function () {
                                            function audioAutoPlay() {
@@ -56,9 +109,17 @@
                                            audioAutoPlay();
                                   });
                                      </audio> 
-    <a href="essay.html" style="text-decoration: none" div class="romantic-text">
-        全世界都不理我的时候，只有你不可以不理我哦！
-     </a>
-  </div>
- </body>
+        <div class="container">
+            <a href="essay.html" style="color:#6C6C6C" div class="love-heart"></a>
+        </div>            
+          <p>
+             欢迎进入
+          </p>
+          <h>
+             </h>
+            <div class="romantic-text">
+            全世界都不理我的时候，只有你不可以不理我哦！
+         </div>
+        </div>
+    </body>
 </html>
